@@ -519,7 +519,7 @@ def clean_strings(strings, ops):
     for value in strings:
         for function in ops:
             value = function(value)
-            result.append(value)
+        result.append(value)
     return result
 ```
 Then we have the following:
