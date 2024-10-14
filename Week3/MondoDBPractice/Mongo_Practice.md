@@ -43,7 +43,9 @@ title : "The Hobbit: The Desolation of Smaug",
 writer : "J.R.R. Tolkein",
 year : 2013,
 franchise : "The Hobbit"
-}
+},
+{title : Pee Wee Herman's Big Adventure},
+{title : Avatar}
 ]
 
 ```
@@ -65,7 +67,9 @@ query the movies collection to
 ### Update Documents
 
 1) add a synopsis to "The Hobbit: An Unexpected Journey" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+
 2) add a synopsis to "The Hobbit: The Desolation of Smaug" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+
 3) add an actor named "Samuel L. Jackson" to the movie "Pulp Fiction"
 ---------------------------------------------------------------------------------
 ### Text Search
