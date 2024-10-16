@@ -1,5 +1,3 @@
-Things to Review for this Past QC (Week 5)
-
 1)  Components of HDFS (Hadoop Distributed File System)
 
     a.  NameNode
