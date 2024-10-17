@@ -52,8 +52,6 @@ out of topic
 - What is the CAP Theorem?
 - What does CAP mean for our distributed data stores when they have network problems?
 
-
-so look into them if you like but they wont be on assessments:
 - What is a database in Mongo?
 - What is a collection?
 - What is a document? 
