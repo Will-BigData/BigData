@@ -223,9 +223,14 @@ sbin/stop-dfs.sh
 ### (OPTIONAL) 9) POSSIBLE ERROR
 
 if you get  call from ...localhost:9000 failed connection exception java.netConnectException: Connection refused
----------------------------------------------------------------------------------------------
 
+```
 vim $HADOOP_HOME/etc/Hadoop/hdfs-site.xml
+```
+
+
+add in :
+```
 
 <property>
 <name>dfs.namenode.name.dir</name>
@@ -236,13 +241,16 @@ vim $HADOOP_HOME/etc/Hadoop/hdfs-site.xml
 <name>dfs.datanode.data.dir</name>
 <value>/home/<user>/hadoop/hadoop-3.3.6/dfs/datanode</value>
 </property>
-
+```
+then
+```
 mkdir -p $HADOOP_HOME/dfs/namenode
 mkdir -p $HADOOP_HOME/dfs/datanode
 
 cd $HADOOP_HOME
+
 chmod 755 dfs
 
 hdfs namenode -format
-
+```
 (also https://stackoverflow.com/questions/11889261/datanode-process-not-running-in-hadoop)
