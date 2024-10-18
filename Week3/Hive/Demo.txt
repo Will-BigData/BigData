@@ -20,6 +20,9 @@ What is the number of consumers for the Branch2?
 
 -------------------------------------------
 cd $HIVE_HOME
+sudo service mysql start
+cd bin
+hive
 ---------------------------------------------
 --problem 1:
 

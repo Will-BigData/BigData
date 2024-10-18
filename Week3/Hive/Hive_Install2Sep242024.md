@@ -11,7 +11,10 @@ wget https://dlcdn.apache.org/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz
 
 tar xzf apache-hive-3.1.3-bin.tar.gz
 ```
-
+Or if you downloaded from Sharepoint into your windows system you may need to copy with something like:
+```
+cp /mnt/c/Users/<username>/Downloads/apache-hive-3.1.3-bin.tar.gz ~
+```
 ## 2) Configure Hive environment variables
 
 ```
