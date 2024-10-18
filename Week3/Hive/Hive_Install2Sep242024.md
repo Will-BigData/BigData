@@ -79,7 +79,7 @@ cd $HIVE_HOME/conf
 cp hive-default.xml.template hive-site.xml
 ```
 
-On line 460, edit the value of the property to look like this (you can use a search command in vim by typing /[string to search]):
+On approximately line 460, edit the value of the property to look like this (you can use a search command in vim by typing /[string to search]):
 
 ```
     <property>
@@ -90,6 +90,11 @@ On line 460, edit the value of the property to look like this (you can use a sea
 ```
 
 Search for "&#8" in the hive-site.xml file and remove those characters.
+
+Also
+```
+cp hive-env.sh.template hive-env.sh
+```
 
 ## 6) Install MySQL
 ```
