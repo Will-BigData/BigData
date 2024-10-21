@@ -1,27 +1,3 @@
-# Advanced Linux Commands
-
-df
-	- "disk free"
-	- Used to display info related to file systems about total space and available space 
-
-mdadm
-	- "Multiple Disk and Device Management"
-	- Manage and monitor software RAID devices
-	- RAID
-		- "Redundant array of inexpensive/independent disks"
-
-fdisk, sfdisk, cfdisk
-	- "format disk"
-	- Generally used for partitioning drives from scripts or for partioning table backups and recovery
-
-lsblk
-	- "List blocks"
-	- List information about all available or specified block devices
-
-ssh
-	- "Secure Shell"
-	- Allow two computers/systems to communicate together
-
 ## HDFS COMMANDS
 
 hdfs fsck [location]
