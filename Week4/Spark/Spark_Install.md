@@ -3,9 +3,9 @@
 ## 1) Download and untar Spark binaries
 
 ```
-wget https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz
+wget https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz
 
-tar -xvzf spark-3.5.1-bin-hadoop3.tgz
+tar -xvzf spark-3.5.3-bin-hadoop3.tgz
 ```
 
 ## 2) Move spark directory
@@ -13,7 +13,7 @@ tar -xvzf spark-3.5.1-bin-hadoop3.tgz
 ```
 cd ~
 
-sudo mv spark-3.5.1-bin-hadoop3 /opt/spark
+sudo mv spark-3.5.3-bin-hadoop3 /opt/spark
 ```
 
 ## 3) Setup environment variables
