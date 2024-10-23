@@ -19,7 +19,7 @@ sudo mv spark-3.5.3-bin-hadoop3 /opt/spark
 ## 3) Setup environment variables
 
 ```
-sudo nano ~/.bashrc
+sudo vim ~/.bashrc
 ```
 
 Place theses exports at the bottom of the file:
