@@ -61,10 +61,15 @@ c.countByValue().items()
 y = t.reduceByKey(lambda x, y: x + y)
 y.collect()
 
+
+
 5)t.groupByKey().mapValues(list).collect()
 
 6)a = t.mapValues(lambda x: x+1).collect()
 b= dict(a)
+
+c= t.map(lambda kv: (kv[0],kv[1]+1)).collect()
+d=dict(c)
 
 7)t.flatMapValues(lambda x : range(x,10)).collect()
 
