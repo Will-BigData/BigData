@@ -251,6 +251,8 @@ cd $HADOOP_HOME
 
 chmod 755 dfs
 
+cd bin
+
 hdfs namenode -format
 ```
 (also https://stackoverflow.com/questions/11889261/datanode-process-not-running-in-hadoop)
