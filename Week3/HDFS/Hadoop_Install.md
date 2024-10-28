@@ -225,7 +225,7 @@ sbin/stop-dfs.sh
 if you get  call from ...localhost:9000 failed connection exception java.netConnectException: Connection refused
 
 ```
-vim $HADOOP_HOME/etc/Hadoop/hdfs-site.xml
+vim $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 ```
 
 
