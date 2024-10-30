@@ -20,7 +20,7 @@ What does it mean to cache an RDD?
 
 What does it mean to perform a parallel operation on an RDD?
 
-Why does Spark need special tools for shared variables, instead of just declaring, for instance, var counter=0?
+Why does Spark need special tools for shared variables, instead of just declaring?
 
 What is a broadcast variable?
 
