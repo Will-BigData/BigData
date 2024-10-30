@@ -1,0 +1,6 @@
+1. podman network create my_network
+
+2. podman build -t custom-spark-image .
+
+3. podman run -d --name spark-master --network my_network -p 7077:7077 -p 8080:8080 custom-spark-image /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+4. podman run -d --name spark-worker --network my_network -p 8081:8081 custom-spark-image /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
