@@ -1,33 +1,40 @@
+import argparse
+
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder \
-    .appName("PySpark test")
-    .getOrCreate()
+def calculate_red_violations(data_source, output_uri):
+    """
+    Processes sample food establishment inspection data and queries the data to find the top 10 establishments
+    with the most Red violations from 2006 to 2020.
 
-spark.sparkContext.setLogLevel("ERROR")
+    :param data_source: The URI of your food establishment data CSV, such as 's3://amzn-s3-demo-bucket/food-establishment-data.csv'.
+    :param output_uri: The URI where output is written, such as 's3://amzn-s3-demo-bucket/restaurant_violation_results'.
+    """
+    with SparkSession.builder.appName("Calculate Red Health Violations").getOrCreate() as spark:
+        # Load the restaurant violation CSV data
+        if data_source is not None:
+            restaurants_df = spark.read.option("header", "true").csv(data_source)
 
-# Test your Spark session
-df = spark.createDataFrame([(1, "foo"), (2, "bar")], ["id", "value"])
-df.show()
+        # Create an in-memory DataFrame to query
+        restaurants_df.createOrReplaceTempView("restaurant_violations")
 
-data = [("John", 28), ("Jane", 25)]
-columns = ["Name", "Age"]
+        # Create a DataFrame of the top 10 restaurants with the most Red violations
+        top_red_violation_restaurants = spark.sql("""SELECT name, count(*) AS total_red_violations 
+          FROM restaurant_violations 
+          WHERE violation_type = 'RED' 
+          GROUP BY name 
+          ORDER BY total_red_violations DESC LIMIT 10""")
 
+        # Write the results to the specified output URI
+        top_red_violation_restaurants.write.option("header", "true").mode("overwrite").csv(output_uri)
 
-df2 = spark.createDataFrame(data, columns)
-df2.show()
-df3=df2.coalesce(1)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--data_source', help="The URI for you CSV restaurant data, like an S3 bucket location.")
+    parser.add_argument(
+        '--output_uri', help="The URI where output is saved, like an S3 bucket location.")
+    args = parser.parse_args()
 
-#df3.write.format("csv").mode("overwrite").save("file:///opt/spark/work-dir")
-
-
-# Get the SparkContext from the SparkSession
-sc = spark.sparkContext
-
-# Create an RDD from a collection (e.g., a list)
-dataRDD = [1, 2, 3, 4, 5]
-rdd = sc.parallelize(dataRDD)
-
-# Perform an action to verify the RDD
-print(rdd.collect())  # Output: [1, 2, 3, 4, 5]
-
+    calculate_red_violations(args.data_source, args.output_uri)
+			
