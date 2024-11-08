@@ -1,4 +1,4 @@
-# Infosys Interview Questions
+# Interview Questions
 
 
 How to count the number of times a word appears in a text file? (was required to write code to solve this) 
